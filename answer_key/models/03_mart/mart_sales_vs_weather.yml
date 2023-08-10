@@ -1,0 +1,9 @@
+version: 2
+models:
+  - name: mart_sales_vs_weather
+    description: "Mart table for the weather data in the biggest market (London) with sales data."
+    columns:
+      - name: sales_month
+      - name: total_revenue_of_orders
+      - name: total_quantity_of_orders
+      - name: temperature

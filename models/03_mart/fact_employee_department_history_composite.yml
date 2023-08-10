@@ -1,0 +1,9 @@
+version: 2
+models:
+  - name: fact_employee_department_history_composite
+    description: "Mart table for fact_empdepthistory consisting of employee, person, department, address, and shift dimensions"
+    columns:
+      - name: employee_department_history_sk
+        tests:
+          - unique
+          - not_null

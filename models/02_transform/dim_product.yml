@@ -1,0 +1,58 @@
+version: 2
+models:
+  - name: dim_product
+    description: "columns that make product dimension"
+    columns:
+      - name:  product_id
+        description: "Primary key for Product records."
+        tests:
+          - unique
+          - not_null
+      - name: product_name
+        description: "Name of the product."
+      - name: product_number
+        description: "Unique product identification number."
+      - name: product_make_flag
+        description: "0 = Product is purchased, 1 = Product is manufactured in-house."
+      - name: finished_goods_flag
+        description: "0 = Product is not a salable item. 1 = Product is salable."
+      - name: product_color
+        description: "Color of the Product."
+      - name: product_safety_stock_level
+        description: "Minimum inventory quantity."
+      - name: product_reorder_point
+        description: "Inventory level that triggers a purchase order or work order."
+      - name: product_standard_cost
+        description: "Standard cost of the product."
+      - name: product_list_price
+        description: "Product MSRP Selling price."
+      - name: product_size
+        description: "Size of the product"
+      - name: product_size_unit_measure_code
+        description: "Unit of measure for Size column"
+      - name: product_weight_unit_measure_code
+        description: "Unit of measure for Weight column."
+      - name: product_weight
+        description: " Weight of the product"
+      - name: product_days_to_manufacture
+        description: "Number of days required to manufacture the product."
+      - name: product_line
+        description: "R = Road, M = Mountain, T = Touring, S = Standard"
+      - name: product_class
+        description: "H = High, M = Medium, L = Low"
+      - name: product_style
+        description: "W = Womens, M = Mens, U = Universal"
+      - name: product_sub_category_id
+        description: "Product is a member of this product subcategory. Foreign key to ProductSubCategory.ProductSubCategoryID."
+      - name: product_model_id
+        description: "Product is a member of this product model. Foreign key to ProductModel.ProductModelID. "
+      - name: product_sell_start_date
+        description: "Date the product was available for sale."
+      - name: product_sell_end_date
+        description: "Date the product was no longer available for sale."
+      - name: product_discontinued_date
+        description: "Date the product was discontinued."
+      - name: row_guid
+        description: "ROWGUIDCOL number uniquely identifying the record. Used to support a merge replication sample."
+      - name: last_update
+        description: "Date and time the record was last updated."

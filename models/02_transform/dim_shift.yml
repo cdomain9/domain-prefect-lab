@@ -1,0 +1,18 @@
+version: 2
+models:
+  - name: dim_shift
+    description: "columns combined to make shift dimension"
+    columns:
+      - name: shift_id
+        description: "Primary key for Shift records.  Identity / Auto increment column older"
+        tests:
+          - unique
+          - not_null
+      - name: shift_name
+        description: "Describes when the shift is"
+      - name: shift_start_time
+        description: "The starting time of the shift"
+      - name: shift_end_time
+        description: "The ending time of the shift"
+      - name: last_update
+        description: "Date record was last updated"

@@ -1,0 +1,36 @@
+version: 2
+models:
+  - name: fact_employee_department_history
+    description: "tables combined to make employee department history fact table"
+    columns:
+      - name: employee_department_history_sk
+        description: "Composite of business_entity_id with department_id"
+        tests:
+          - unique
+          - not_null
+      - name: business_entity_id
+        description: "Employee identification number."
+        tests:
+          - not_null
+      - name: national_id_number
+        description: "Unique national identification number such as a social security number."
+      - name: department_id
+        description: "Department in which the employee worked including currently"
+      - name: shift_id
+        description: "Primary key for Shift records."
+      - name: start_date
+        description: "Date the employee started work in the department."
+      - name: end_date
+        description: "Date the employee left the department. NULL = Current department."
+      - name: org_node
+        description: "Where the employee is located in corporate hierarchy."
+      - name: org_level
+        description: "The depth of the employee in the corporate hierarchy."
+      - name: employee_vacation_hours
+        description: "Number of available vacation hours."
+      - name: employee_sick_leave_hours
+        description: "Number of available sick leave hours."
+      - name: shift_start_time
+        description: "The starting time of the shift"
+      - name: shift_end_time
+        description: "The ending time of the shift"

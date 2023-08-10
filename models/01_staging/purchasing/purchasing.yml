@@ -1,0 +1,33 @@
+version: 2
+models:
+  - name: stg_purchase_order_detail
+    description: staging table that lists material purchasing details within adventure works.
+    columns:
+      - name: purchase_order_detail_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_purchase_order_header
+    description: staging table that provides purchase header details within adventure works.
+    columns:
+      - name: purchase_order_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_ship_method
+    description: staging table that lists shipping method details within adventure works.
+    columns:
+      - name: ship_method_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_vendor
+    description: staging table that lists material vendor information for adventure works.
+    columns:
+      - name: vendor_record_id
+        tests:
+          - unique
+          - not_null

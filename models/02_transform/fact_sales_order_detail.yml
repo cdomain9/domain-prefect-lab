@@ -1,0 +1,80 @@
+version: 2
+models:
+  - name: fact_sales_order_detail
+    description: "Sales order detail and header tables to make fact table"
+    columns:
+      - name: sales_order_detail_sk
+        description: "Composite of sales_order_id and sales_order_detail_id"
+        tests:
+          - unique
+          - not_null
+      - name: business_entity_id
+        description: "Customer identification number"
+      - name: sales_order_detail_id
+        description: "Primary key for sales order line. One incremental unique number per product sold."
+      - name: sales_order_id
+        description: "Primary key for sales order."
+      - name: product_id
+        description: "Product sold to customer"
+      - name: special_offer_id
+        description: "Promotional code"
+      - name: online_order_flag
+        description: "0 = Order placed by sales person. 1 = Order placed online by customer."
+      - name: customer_account_number
+        description: "Financial accounting number reference."
+      - name: customer_id
+        description: "Customer identification number"
+      - name: sales_person_id
+        description: "Sales person who created the sales order."
+      - name: sales_territory_id
+        description: "Territory in which the sale was made."
+      - name: bill_to_address_id
+        description: "Customer billing address"
+      - name: ship_to_address_id
+        description: "Customer shipping address."
+      - name: ship_method_id
+        description: "Shipping method"
+      - name: sales_order_detail_last_update
+        description: "Date and time the sales order line was last updated"
+      - name: sales_order_date
+        description: "Dates the sales order was created."
+      - name: sales_order_due_date
+        description: "Date the order is due to the customer."
+      - name: sales_order_ship_date
+        description: "Date the order was shipped to the customer."
+      - name: sales_order_header_last_update
+        description: "Date and time the sales order header was last updated."
+      - name: sales_order_quantity
+        description: "Quantity ordered per product."
+      - name: product_unit_price
+        description: "Selling price of a single product."
+      - name: product_unit_price_discount
+        description: "Discount amount."
+      - name: sales_order_line_total
+        description: "Per product subtotal. Computed as UnitPrice * (1 - UnitPriceDiscount) * OrderQty"
+      - name: sub_total
+        description: "Sales subtotal. Computed as SUM(SalesOrderDetail.LineTotal)for the appropriate SalesOrderID."
+      - name: tax_amount
+        description: "Tax amount."
+      - name: freight
+        description: "Shipping cost."
+      - name: total_due
+        description: "Total due from customer. Computed as Subtotal + TaxAmt + Freight."
+      - name: st_sales_ytd
+        description: "Sales in the territory year to date."
+      - name: st_sales_last_year
+        description: "Sales in the territory the previous year."
+      - name: sales_quota
+        description: "Projected yearly sales."
+      - name: sales_person_bonus
+        description: "Bonus due if quota is met."
+      - name: sales_commission_percent
+        description: "Commission percent received per sale."
+      - name: sp_sales_ytd
+        description: "Sales total year to date."
+      - name: sp_sales_last_year
+        description: "Sales total of previous year."
+      - name: ship_base
+        description: "Minimum shipping charge."
+      - name: ship_rate
+        description: "Shipping charge per pound."

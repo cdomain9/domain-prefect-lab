@@ -1,0 +1,67 @@
+{
+    "secrets": {
+        "ACCOUNT": {
+            "description": "The Snowflake account slug, like company_name.cloud-region-num",
+            "documentationUrl": "https://docs.getdbt.com/docs/core/connect-data-platform/snowflake-setup#account"
+        },
+        "USERNAME": {
+            "description": "Your Snowflake username.",
+            "documentationUrl": "https://docs.getdbt.com/docs/core/connect-data-platform/snowflake-setup"
+        },
+        "PASSWORD": {
+            "description": "Your Snowflake password."
+        },
+        "WAREHOUSE": {
+            "description": "The Snowflake warehouse to use for this project.",
+            "documentationUrl": "https://docs.getdbt.com/docs/core/connect-data-platform/snowflake-setup#warehouse"
+        },
+        "DATABASE": {
+            "description": "The Snowflake database to use for this project.",
+            "documentationUrl": "https://docs.getdbt.com/docs/core/connect-data-platform/snowflake-setup#database"
+        },
+        "SCHEMA": {
+            "description": "The Snowflake schema to use for this project.",
+            "documentationUrl": "https://docs.getdbt.com/docs/core/connect-data-platform/snowflake-setup#schema"
+        },
+        "ROLE": {
+            "description": "The Snowflake role to use for this project.",
+            "documentationUrl": "https://docs.getdbt.com/docs/core/connect-data-platform/snowflake-setup#role"
+        },
+        "GITHUB_TOKEN": {
+            "description": "A GitHub personal access token with the repo scope.",
+            "documentationUrl": "https://github.com/settings/tokens"
+        }
+    },
+    "name": "Codespaces dbt CLI Starter",
+    "extensions": [
+        "innoverio.vscode-dbt-power-user"
+    ],
+    "dockerFile": "Dockerfile",
+    "settings": {
+        "workbench.editorAssociations": {   
+            "*.md": "vscode.markdown.preview.editor",
+        },
+        "[jinja-sql]": {
+            "editor.defaultFormatter": "innoverio.vscode-dbt-power-user",
+            "editor.formatOnSave": true
+        },
+        "files.associations": {
+            "*.sql": "jinja-sql"
+        },
+        "python.interpreter.infoVisibility": "always",
+        "python.defaultInterpreterPath": "/usr/local/bin/python"
+    },
+    "features": {
+        "docker-in-docker": {
+            "version": "latest",
+            "moby": true,
+            "dockerDashComposeVersion": "v1"
+        }
+    },
+    "hostRequirements": {
+        "cpus": 2,
+        "memory": "4gb",
+        "storage": "32gb"
+    },
+    "onCreateCommand": "python -m pip install -r requirements.txt",
+}

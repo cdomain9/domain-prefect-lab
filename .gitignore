@@ -1,0 +1,9 @@
+.env
+target/
+dbt_modules/
+logs/
+.user.yml
+__pycache__
+.vscode
+.prefectignore
+env

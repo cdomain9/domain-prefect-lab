@@ -1,0 +1,24 @@
+version: 2
+models:
+  - name: dim_vendor
+    description: "columns combined to make vendor dimension"
+    columns:
+      - name: vendor_record_id
+        description: "Primary key. Foreign key to Vendor. BusinessEntityID"
+        tests:
+          - unique
+          - not_null
+      - name: account_number
+        description: "Vendor account (identification) number."
+      - name: vendor_name
+        description: "company name"
+      - name: vendor_credit_rating
+        description: "1 = Superior, 2 = Excellent, 3 = Above average, 4 = Average, 5 = Below average"
+      - name: preferred_vendor_status
+        description: "0 = Do not use if another vendor is available. 1 = Preferred over other vendors supplying the same product. Default: 1"
+      - name: active_flag
+        description: "0 = Vendor no longer used. 1 = Vendor is actively used. Default: 1"
+      - name: purchasing_web_svc_url
+        description: "Vendor URL"
+      - name: last_update
+        description: "Last updated date"

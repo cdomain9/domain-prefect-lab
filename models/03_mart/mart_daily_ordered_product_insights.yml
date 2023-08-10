@@ -1,0 +1,9 @@
+version: 2
+models:
+  - name: mart_daily_ordered_product_insights
+    description: "Mart table for the timeliness of receiving orders and the quality of the products we are receiving."
+    columns:
+      - name: product_date_sk
+        tests:
+          - unique
+          - not_null

@@ -1,0 +1,11 @@
+version: 2
+sources:
+  - name: aw_person
+    database: ADVENTUREWORKS_DB
+    schema: person
+    tables:
+      - name: address
+      - name: addresstype
+      - name: businessentityaddress
+      - name: person
+      - name: stateprovince

@@ -1,0 +1,34 @@
+version: 2
+models:
+  - name: dim_customer
+    description: "columns combined to make customer dimension"
+    columns:
+      - name: customer_id
+        description: "Key for all customers."
+        tests: 
+          - not_null
+          - unique
+      - name: address_id
+        description: "id for address records"
+      - name: business_entity_id
+        description: "Key for all customers, vendors, and employees."
+      - name: title
+        description: "A courtesy title. For example, Mr. or Ms"
+      - name: first_name
+        description: "First name of the person."
+      - name: last_name
+        description: "Last name of the person."
+      - name: address_type
+        description: "Address type description. For example, Billing, Home, or Shipping."
+      - name: address_line_1
+        description: "First street address line."
+      - name: city
+        description: "Name of the city."
+      - name: state_province_code
+        description: "State or province code."
+      - name: postal_code
+        description: "Postal code for the street address."
+      - name: country_region_abbv
+        description: "ISO standard country or region code"
+      - name: sales_territory_name
+        description: "Sales territory description."

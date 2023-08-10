@@ -1,0 +1,8 @@
+version: 2
+models:
+  - name: stg_weather
+    description: Staging previously ingested weather data
+    columns:
+      - name: weather_date
+      - name: city
+      - name: temperature
