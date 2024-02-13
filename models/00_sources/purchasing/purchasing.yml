@@ -1,0 +1,12 @@
+version: 2
+sources:
+  - name: aw_purchasing
+    database: ADVENTUREWORKS_DB
+    schema: purchasing
+    tables:
+      - name: productvendor
+      - name: purchaseorderdetail
+      - name: purchaseorderheader
+      - name: shipmethod
+      - name: vendor
+      

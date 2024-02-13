@@ -1,0 +1,13 @@
+version: 2
+sources:
+  - name: aw_sales
+    database: ADVENTUREWORKS_DB
+    schema: sales
+    tables:
+      - name: customer
+      - name: salesorderdetail
+      - name: salesorderheader
+      - name: salesperson
+      - name: salespersonquotahistory
+      - name: salesterritory
+      - name: salesterritoryhistory

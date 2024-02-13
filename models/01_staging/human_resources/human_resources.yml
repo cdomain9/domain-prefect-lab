@@ -1,0 +1,41 @@
+version: 2
+models:
+  - name: stg_department
+    description: staging table that lists departments within adventure works.
+    columns:
+      - name: department_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_employee_department_history
+    description: staging table that shows employment history by department.
+    columns:
+      - name: employee_department_history_sk
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_employee
+    description: staging table that shows employee details.
+    columns:
+      - name: employee_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_job_candidate
+    description: staging table that shows job candidate details.
+    columns:
+      - name: job_candidate_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_shift
+    description: staging table that shows shift details.
+    columns:
+      - name: shift_id
+        tests:
+          - unique
+          - not_null

@@ -1,0 +1,49 @@
+version: 2
+models:
+  - name: stg_customer
+    description: staging table that lists customer details within adventure works.
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_sales_person
+    description: staging table that lists sales person details within adventure works.
+    columns:
+      - name: business_entity_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_sales_territory_history
+    description: staging table that lists sales territory history within adventure works.
+    columns:
+      - name: sales_territory_history_sk
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_sales_territory
+    description: staging table that lists sales territory information within adventure works.
+    columns:
+      - name: sales_territory_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_sales_order_detail
+    description: staging table that provides sales order detail information within adventure works.
+    columns:
+      - name: sales_order_detail_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_sales_order_header
+    description: staging table that provides sales order header information within adventure works.
+    columns:
+      - name: sales_order_id
+        tests:
+          - unique
+          - not_null

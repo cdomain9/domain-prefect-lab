@@ -1,0 +1,7 @@
+version: 2
+sources:
+  - name: weather
+    database: "{{ env_var('DATABASE') }}"
+    schema: "{{ env_var('SCHEMA') }}"
+    tables:
+      - name: weather_raw

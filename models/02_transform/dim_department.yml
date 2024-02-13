@@ -1,0 +1,16 @@
+version: 2
+models:
+  - name: dim_department
+    description: "columns in department dimension"
+    columns: 
+      - name: department_id
+        description: "Primary key for Department records."
+        tests:
+          - unique
+          - not_null
+      - name: department_name
+        description: "Name of the department."
+      - name: group_name
+        description: "Name of the group to which the department belongs"
+      - name: last_update
+        description: "Time record was last updated."

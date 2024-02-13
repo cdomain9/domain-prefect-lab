@@ -1,0 +1,26 @@
+version: 2
+models:
+  - name: dim_sales_person
+    description: "columns combined to make sales person dimension"
+    columns:
+      - name:  business_entity_id
+        description: "Sales person identification number. Foreign key to SalesPerson.BusinessEntityID."
+        tests:
+          - unique
+          - not_null
+      - name: territory_id
+        description: "Territory currently assigned to. Foreign key to SalesTerritory.SalesTerritoryID."
+      - name: sales_quota
+        description: "Projected yearly sales."
+      - name: sales_person_bonus
+        description: "Bonus due if quota is met."
+      - name: sales_commission_percent
+        description: "Commision percent received per sale."
+      - name: sales_year_to_date
+        description: "Sales revenue in United States currency total year to date."
+      - name: sales_last_year
+        description: "Sales total of previous year."
+      - name: row_guid
+        description: "ROWGUIDCOL number uniquely identifying the record. Used to support a merge replication sample."
+      - name: last_update
+        description: "Time record was last updated."

@@ -1,0 +1,10 @@
+version: 2
+models:
+  - name: dim_date
+    description: "columns consolidated to get ship method dimension"
+    columns:
+      - name: date_day
+        description: "Distinct Date Field"
+        tests:
+          - unique
+          - not_null

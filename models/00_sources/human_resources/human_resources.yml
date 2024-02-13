@@ -1,0 +1,12 @@
+version: 2
+sources:
+  - name: aw_humanresources
+    database: ADVENTUREWORKS_DB
+    schema: humanresources
+    tables:
+      - name: department
+      - name: employee
+      - name: employeedepartmenthistory
+      - name: employeepayhistory
+      - name: jobcandidate
+      - name: shift

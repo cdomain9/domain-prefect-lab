@@ -1,0 +1,9 @@
+version: 2
+models:
+  - name: fact_sales_order_detail_composite
+    description: "Mart table for fact_salesorderdetail consisting of address, address type, customer, date, person, product, sales person, sales territory, ship method and vendor dimensions"
+    columns:
+      - name: sales_order_detail_sk
+        tests:
+          - unique
+          - not_null

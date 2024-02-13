@@ -1,0 +1,8 @@
+version: 2
+models:
+  - name: fact_weather
+    description: "Weather records of temperature over time"
+    columns:
+      - name: weather_date
+      - name: city
+      - name: temperature

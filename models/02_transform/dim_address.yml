@@ -1,0 +1,37 @@
+version: 2
+models:
+  - name: dim_address
+    description: "columns combined to make address dimension"
+    columns:
+      - name: address_type_id
+        description: "Key for AddressType records."
+        tests:
+          - not_null
+      - name: address_id
+        description: "Primary key for Address records"
+        tests:
+          - not_null
+      - name: business_entity_id
+        description: "Primary key for all customers, vendors, and employees. Identity / Auto increment column"
+      - name: address_type
+        description: "Address type description. For example, Billing, Home, or Shipping."
+      - name: address_line_1
+        description: "First street address line."
+      - name: address_line_2
+        description: "Second street address line."
+      - name: city
+        description: "Name of the city."
+      - name: state_province_name
+        description: "State or province description."
+      - name: state_province_code
+        description: "ISO standard state or province code."
+      - name: postal_code
+        description: "Postal code for the street address."
+      - name: country_region_abbv
+        description: "ISO standard country or region code."
+      - name: spatial_location
+        description: "Latitude and longitude of this address."
+      - name: row_guid
+        description: "ROWGUIDCOL number uniquely identifying the record. Used to support a merge replication sample."
+      - name: last_update
+        description: "Time record was last updated."

@@ -1,0 +1,58 @@
+version: 2
+models:
+  - name: fact_purchase_order
+    description: "Tables combined to make purchase order fact table"
+    columns:
+      - name: purchase_order_sk
+        description: "Composite of purchase_order_id with purchase_order_detail_id"
+        tests:
+          - unique
+          - not_null
+      - name: purchase_order_id
+        description: "Primary key for purchase orders"
+        tests:
+          - not_null
+      - name: purchase_order_detail_id
+        description: "Primary key for purchase order lines. One line number per purchased product."
+        tests:
+          - not_null
+      - name: purchase_order_due_date
+        description: "Date the product is expected to be received."
+      - name: purchase_order_qty
+        description: "Quantity ordered."
+      - name: material_product_id
+        description: "Product identification number"
+      - name: material_unit_price
+        description: "Vendor's selling price of a single product."
+      - name: purchase_order_detail_line_total
+        description: "Per product subtotal. Computed as OrderQty * UnitPrice."
+      - name: received_material_qty
+        description: "Quantity actually received from the vendor."
+      - name: rejected_material_qty
+        description: "Quantity rejected during inspection."
+      - name: stocked_material_qty
+        description: "Quantity accepted into inventory. Computed as ReceivedQty - RejectedQty."
+      - name: purchase_order_revision_number
+        description: "Incremental number to track changes to the purchase order over time."
+      - name: purchase_order_status
+        description: "Order current status. 1 = Pending; 2 = Approved; 3 = Rejected; 4 = Complete"
+      - name: employee_id
+        description: "Employee who created the purchase order"
+      - name: material_vendor_id
+        description: "Vendor with whom the purchase order is placed"
+      - name: material_ship_method_id
+        description: "Shipping method"
+      - name: material_ship_date
+        description: "Estimated shipment date from the vendor"
+      - name: purchase_order_sub_total
+        description: "Purchase order subtotal"
+      - name: purchase_order_tax_amt
+        description: "Tax amount."
+      - name: material_freight
+        description: "Shipping cost."
+      - name: purchase_order_total_due
+        description: "Total due to vendor. Computed as Subtotal + TaxAmt + Freight."
+      - name: ship_base
+        description: "Minimum shipping charge."
+      - name: ship_rate
+        description: "Shipping charge per pound."

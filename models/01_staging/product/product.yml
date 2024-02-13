@@ -1,0 +1,9 @@
+version: 2
+models:
+  - name: stg_product
+    description: staging table that lists product details within adventure works.
+    columns:
+      - name: product_id
+        tests:
+          - unique
+          - not_null

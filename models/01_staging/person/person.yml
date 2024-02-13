@@ -1,0 +1,41 @@
+version: 2
+models:
+  - name: stg_address_type
+    description: staging table that lists types of addresses of persons within adventure works.
+    columns:
+      - name: address_type_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_address
+    description: staging table that lists addresses of persons within adventure works.
+    columns:
+      - name: address_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_business_entity_address
+    description: staging table that lists addresses of persons within adventure works.
+    columns:
+      - name: business_entity_address_sk
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_person
+    description: staging table that lists details of persons within adventure works.
+    columns:
+      - name: business_entity_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_state_province
+    description: staging table that lists state and province information within adventure works.
+    columns:
+      - name: state_province_id
+        tests:
+          - unique
+          - not_null
